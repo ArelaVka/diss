@@ -1,5 +1,4 @@
 import numpy as np
-import scipy as sp
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
@@ -14,13 +13,13 @@ def g(y, x):
 # Initial conditions on y, y' at x=0
 init = 2.0, 3.0
 # First integrate from 0 to 2
-x = np.linspace(0, 2, 100)
-sol = odeint(g, init, x)
+X = np.linspace(0, 2, 100)
+sol = odeint(g, init, X)
 # Then integrate from 0 to -2
-plt.plot(x, sol[:, 0], color='b')
-x = np.linspace(0, -2, 100)
-sol = odeint(g, init, x)
-plt.plot(x, sol[:, 0], color='b')
+plt.plot(X, sol[:, 0], color='b')
+X = np.linspace(0, -2, 100)
+sol = odeint(g, init, X)
+plt.plot(X, sol[:, 0], color='b')
 
 # The analytical answer in red dots
 exact_x = np.linspace(-2, 2, 10)
